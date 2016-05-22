@@ -1,8 +1,0 @@
-<div class="row" ng-cloak>
-  <div class="col-sm-12">
-    <h2 ng-Show="ctrl.device.name" editable-text="ctrl.device.name" onaftersave="ctrl.updateName()">{{ ctrl.device.name }}</h2>
-    <h2 ng-Hide="ctrl.device.name" editable-text="ctrl.device.name" onaftersave="ctrl.updateName()">{{ ctrl.device.deviceId }}</h2>
-  </div>
-</div>
-
-<div ui-view="device"></div>

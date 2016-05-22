@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Prüfungsanmeldung</h1>
+    <p>Bitte wählen Sie die anzumeldene Prüfung aus unten stehender Struktur aus.</p>
+  </div>
+</div>
+<div class="row top-buffer-sm">
+  <div class="col-sm-12">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Prüfungsnummer</th>
+          <th>Bezeichnung</th>
+          <th>Prüfer</th>
+          <!-- <th>Status</th> -->
+          <th class="text-center">Aktion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="pruefung in prAnCtrl.pruefungen | orderBy : 'name'">
+          <td>{{ pruefung.id }}</td>
+          <td>{{ pruefung.bezeichnung }}</td>
+          <td>{{ pruefung.pruefer }}</td>
+          <!-- <td>{{ pruefung.status }}</td> -->
+          <td class="text-center"><button class="btn btn-sm btn-link" ng-Click="prAnCtrl.anmelden(pruefung.id)">Anmelden</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

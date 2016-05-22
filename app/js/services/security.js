@@ -34,9 +34,9 @@ function SecurityService($http, AppSettings, TokenStorage, $rootScope) {
         username: username,
         password: password
       }).success((data, status, headers) => {
+        TokenStorage.store(headers('X-AUTH-TOKEN'));
         service.getUser().then((u) => {
           $rootScope.user = u;
-          TokenStorage.store(headers('X-AUTH-TOKEN'));
           resolve(u);
         })
 

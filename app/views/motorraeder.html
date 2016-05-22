@@ -1,0 +1,29 @@
+<h1>Übersicht</h1>
+
+<!-- <div class="row" ng-repeat="motorrad in motorraederCtrl.motorraeder | orderBy : 'name'">
+  <div class="col-md-12">
+    <a ui-sref="Motorraeder.Motorrad({motorradId: motorrad.id})">
+       {{ motorrad.name }}</a>
+  </div>
+</div> -->
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Bezeichnung</th>
+      <th>headline 2</th>
+      <th>headline 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="motorrad in motorraederCtrl.motorraeder | orderBy : 'name'">
+      <td><a ui-sref="Motorraeder.Motorrad({motorradId: motorrad.id})">
+         {{ motorrad.name }}</a></td>
+      <td>alsdj</td>
+      <td>slkfdj</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="animatedEnter" ui-view="content"></div>

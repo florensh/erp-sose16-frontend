@@ -10,18 +10,19 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" ui-sref="Rooms"><fa name="lightbulb-o"></fa> {{ navigation.brand }}</a>
+      <a class="navbar-brand" ui-sref="Startseite">
+        <fa name="graduation-cap"></fa> {{ navigation.brand }}</a>
 
     </div>
 
     <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="Rooms">Rooms</a></li>
+        <!-- <li><a ui-sref="Rooms">Rooms</a></li> -->
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">
-          <!-- {{ navigation.user.username }}</a></li> -->
+          Sie sind angemeldet als: <strong>{{ navigation.user.username }}</strong> <!--({{ navigation.user.roles[0]}})--></a></li>
         <li ng-show="!navigation.authenticated()"><a ui-sref="Login">login</a></li>
         <li ng-show="navigation.authenticated()"><a href="" ng-click="navigation.logout()">logout</a></li>
       </ul>
