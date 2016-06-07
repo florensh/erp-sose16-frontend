@@ -1,0 +1,42 @@
+@startuml
+
+class Person {
+  name: String
+  vorname: String
+  geburtsdatum: Date
+}
+
+class Student{
+  matrikelnummer : Integer
+
+}
+
+class Pruefung {
+  pruefungsnummer: Integer
+  bezeichnung: String
+  pruefungsdatum: Date
+
+}
+
+class Dozent {
+  personalnummer: Integer
+}
+
+Student -up-> Person
+Dozent -up-> Person
+Dozent -- Pruefung: > leitet
+Student "0..*" - "0..*" Pruefung: > nimmt teil an
+(Student, Pruefung) .. Pruefungsleistung
+
+class Pruefungsleistung {
+  note: Float
+  status: Pruefungsstatus
+}
+
+enum Pruefungsstatus {
+  ANGEMELDET
+  ABGEMELDET
+  GELEISTET
+}
+
+@enduml
