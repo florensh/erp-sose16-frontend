@@ -4,6 +4,7 @@ class Person {
   name: String
   vorname: String
   geburtsdatum: Date
+  email: String
 }
 
 class Student{

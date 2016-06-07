@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Persönliche Daten</h1>
+    <!-- <p>Bitte wählen Sie die anzumeldene Prüfung aus unten stehender Struktur aus.</p> -->
+  </div>
+</div>
+<div class="row top-buffer-sm">
+  <div class="col-sm-12">
+
+    <form>
+      <div class="form-group">
+        <label for="vorname">Vorname</label>
+        <input type="text" disabled class="form-control" id="vorname" placeholder="Vorname" ng-model="persDatenCtrl.student.vorname">
+      </div>
+
+      <div class="form-group">
+        <label for="nachname">Nachname</label>
+        <input type="text" disabled class="form-control" id="nachname" placeholder="Nachname" ng-model="persDatenCtrl.student.name">
+      </div>
+
+      <div class="form-group">
+        <label for="gebdat">Geburtsdatum</label>
+        <input type="date" disabled class="form-control" id="gebdat" placeholder="Geburtsdatum" ng-model="persDatenCtrl.student.geburtsdatum">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" disabled class="form-control" id="email" placeholder="Email" ng-model="persDatenCtrl.student.email">
+      </div>
+
+    </form>
+  </div>
+</div>

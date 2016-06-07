@@ -40,6 +40,24 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       title: 'Allgemeine Verwaltung'
 
 
+    }).state('Startseite.AllgemeineVerwaltung.PersoenlicheDaten', {
+      url: '/persoenlicheDaten',
+      views: {
+        'content@': {
+          controller: 'PersDatenCtrl as persDatenCtrl',
+          templateUrl: 'persDaten.html'
+        },
+        'navigation@': {
+          controller: 'NavigationCtrl as navigation',
+          templateUrl: 'navigation.html'
+        }
+      },
+      ncyBreadcrumb: {
+        label: 'Persönliche Daten'
+      },
+      title: 'Persönliche Daten'
+
+
     }).state('Startseite.Pruefungsverwaltung', {
       url: '/pruefVerwaltung',
       views: {
