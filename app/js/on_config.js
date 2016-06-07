@@ -4,7 +4,25 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('Startseite', {
+    .state('Startseite_Student', {
+      url: '/student_home',
+      views: {
+        'content': {
+          controller: 'ExampleCtrl as home',
+          templateUrl: 'home.html'
+        },
+        'navigation': {
+          controller: 'NavigationCtrl as navigation',
+          templateUrl: 'navigation.html'
+        }
+      },
+      ncyBreadcrumb: {
+        skip: false
+      },
+      title: 'Startseite'
+
+
+    }).state('Startseite', {
       url: '/',
       views: {
         'content': {
@@ -22,7 +40,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       title: 'Startseite'
 
 
-    }).state('Startseite.AllgemeineVerwaltung', {
+    }).state('Startseite_Student.AllgemeineVerwaltung', {
       url: '/allgVerwaltung',
       views: {
         'content@': {
@@ -40,7 +58,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       title: 'Allgemeine Verwaltung'
 
 
-    }).state('Startseite.AllgemeineVerwaltung.PersoenlicheDaten', {
+    }).state('Startseite_Student.AllgemeineVerwaltung.PersoenlicheDaten', {
       url: '/persoenlicheDaten',
       views: {
         'content@': {
@@ -58,7 +76,7 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       title: 'Persönliche Daten'
 
 
-    }).state('Startseite.Pruefungsverwaltung', {
+    }).state('Startseite_Student.Pruefungsverwaltung', {
       url: '/pruefVerwaltung',
       views: {
         'content@': {
@@ -76,7 +94,27 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       title: 'Prüfungsverwaltung'
 
 
-    }).state('Startseite.Pruefungsverwaltung.Anmeldung', {
+    }).state('Startseite_Student.Pruefungsverwaltung.Notenspiegel', {
+      url: '/notenspiegel',
+      views: {
+        'content@': {
+          controller: 'NotenspiegelCtrl as notenspiegelCtrl',
+          templateUrl: 'notenspiegel.html'
+        },
+        'navigation@': {
+          controller: 'NavigationCtrl as navigation',
+          templateUrl: 'navigation.html'
+        }
+      },
+      ncyBreadcrumb: {
+        label: 'Notenspiegel'
+      },
+      title: 'Notenspiegel'
+
+
+    })
+
+  .state('Startseite_Student.Pruefungsverwaltung.Anmeldung', {
       url: '/anmeldung',
       views: {
         'content@': {

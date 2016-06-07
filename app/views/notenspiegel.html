@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Notenspiegel</h1>
+    <div class="row top-buffer-sm">
+      <div class="col-sm-12">
+        <table>
+          <tr>
+            <td>Name des Studierenden:&nbsp;</td>
+            <td>{{ notenspiegelCtrl.student.vorname }}&nbsp;{{ notenspiegelCtrl.student.nachname }}</td>
+          </tr>
+          <tr>
+            <td>Fach:&nbsp;</td>
+            <td>{{ notenspiegelCtrl.student.fach }}</td>
+          </tr>
+          <tr>
+            <td>Matrikelnummer:&nbsp;</td>
+            <td>{{ notenspiegelCtrl.student.matrikelnummer }}</td>
+          </tr>
+          <tr>
+            <td>Aktueller Notenschnitt:&nbsp;</td>
+            <td><strong>{{ notenspiegelCtrl.notenschnitt | number:1 }}</strong></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row top-buffer-sm">
+  <div class="col-sm-12">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Prüfungsnummer</th>
+          <th>Bezeichnung</th>
+          <th>Prüfer</th>
+          <th>Status</th>
+          <th>Note</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="pruefung in notenspiegelCtrl.pruefungen | orderBy : 'name'">
+          <td>{{ pruefung.id }}</td>
+          <td>{{ pruefung.bezeichnung }}</td>
+          <td>{{ pruefung.pruefer }}</td>
+          <td>{{ pruefung.status }}</td>
+          <td>{{ pruefung.note | number:1 }}</td>
+          <td>{{ pruefung.semester }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -9,6 +9,8 @@ class Person {
 
 class Student{
   matrikelnummer : Integer
+  semester: Integer
+  fach: String
 
 }
 
@@ -32,12 +34,14 @@ Student "0..*" - "0..*" Pruefung: > nimmt teil an
 class Pruefungsleistung {
   note: Float
   status: Pruefungsstatus
+  semester: Integer
 }
 
 enum Pruefungsstatus {
   ANGEMELDET
   ABGEMELDET
-  GELEISTET
+  BESTANDEN
+  NICHT_BESTANDEN
 }
 
 @enduml
