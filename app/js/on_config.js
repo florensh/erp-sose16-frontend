@@ -17,7 +17,25 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
         }
       },
       ncyBreadcrumb: {
-        skip: false
+        label: 'Startseite'
+      },
+      title: 'Startseite'
+
+
+    }).state('Startseite_Dozent', {
+      url: '/dozent_home',
+      views: {
+        'content': {
+          controller: 'ExampleCtrl as home',
+          templateUrl: 'home.html'
+        },
+        'navigation': {
+          controller: 'NavigationCtrl as navigation',
+          templateUrl: 'navigation.html'
+        }
+      },
+      ncyBreadcrumb: {
+        label: 'Startseite'
       },
       title: 'Startseite'
 
