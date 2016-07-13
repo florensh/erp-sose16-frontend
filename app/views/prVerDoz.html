@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>{{ prVerCtrl.pruefung}}</h1>
+    <p>Bitte tragen sie die jeweils erzielte Note des Studenten in unten stehende Struktur ein.</p>
+  </div>
+</div>
+
+<div class="row top-buffer-sm">
+  <div class="col-sm-12">
+    <canvas id="bar" height="50" class="chart chart-bar" chart-data="prVerCtrl.data" chart-labels="prVerCtrl.labels" chart-series="prVerCtrl.series">
+    </canvas>
+  </div>
+</div>
+
+
+<div class="row top-buffer-sm">
+  <div class="col-sm-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Note</th>
+          <th></th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="pruefung in prVerCtrl.pruefungen">
+          <td>{{ pruefung.student }}</td>
+          <td ng-cloak>
+            <span ng-show="pruefung.note!=null">{{pruefung.note}}</span>
+            <input ng-show="pruefung.note == null" type="text" class="form-control" id="note" placeholder="Note" ng-model="note">
+          </td>
+          <td>
+            <butten ng-show="pruefung.note == null" class="btn btn-sm btn-default" ng-click="prVerCtrl.setzeNote(pruefung, note)">
+              <fa name="check"></fa>
+            </butten>
+            <butten ng-show="pruefung.note != null" class="btn btn-sm btn-default" ng-click="prVerCtrl.entferneNote(pruefung)">
+              <fa name="times"></fa>
+            </butten>
+          </td>
+          <!-- <td>{{ pruefung.status() }}</td> -->
+          <td ng-show="pruefung.status() == 'angemeldet'"><span class="label label-info">{{ pruefung.status() }}</span></td>
+          <td ng-show="pruefung.status() == 'nicht bestanden'"><span class="label label-danger">{{ pruefung.status() }}</span></td>
+          <td ng-show="pruefung.status() == 'bestanden'"><span class="label label-success">{{ pruefung.status() }}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

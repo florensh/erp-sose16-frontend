@@ -22,7 +22,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">
-          Sie sind angemeldet als: <strong>{{ navigation.user.username }}</strong> <!--({{ navigation.user.roles[0]}})--></a></li>
+          Sie sind angemeldet als: <strong>{{ navigation.user.username }}</strong> in der Rolle {{ navigation.user.roles[0]}}</a></li>
         <li ng-show="!navigation.authenticated()"><a ui-sref="Login">login</a></li>
         <li ng-show="navigation.authenticated()"><a href="" ng-click="navigation.logout()">logout</a></li>
       </ul>

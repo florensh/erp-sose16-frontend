@@ -3,7 +3,7 @@
     <h1>Notenspiegel</h1>
     <div class="row top-buffer-sm">
       <div class="col-sm-12">
-        <table>
+        <table class="notenspiegel-info">
           <tr>
             <td>Name des Studierenden:&nbsp;</td>
             <td>{{ notenspiegelCtrl.student.vorname }}&nbsp;{{ notenspiegelCtrl.student.name }}</td>
@@ -27,7 +27,7 @@
 </div>
 <div class="row top-buffer-sm">
   <div class="col-sm-12">
-    <table class="table table-condensed">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>Prüfungsnummer</th>
@@ -43,7 +43,8 @@
           <td>{{ pruefung.id }}</td>
           <td>{{ pruefung.bezeichnung }}</td>
           <td>{{ pruefung.pruefer }}</td>
-          <td>{{ pruefung.status }}</td>
+          <td ng-show="pruefung.status() == 'nicht bestanden'"><span class="label label-danger">{{ pruefung.status() }}</span></td>
+          <td ng-show="pruefung.status() == 'bestanden'"><span class="label label-success">{{ pruefung.status() }}</span></td>
           <td>{{ pruefung.note | number:1 }}</td>
           <td>{{ pruefung.semester }}</td>
         </tr>

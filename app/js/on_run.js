@@ -34,9 +34,11 @@ function OnRun($rootScope, AppSettings, $animate, editableOptions, SecurityServi
         if (toState.name == "Startseite") {
           console.log($rootScope.user.roles)
           if (_.includes($rootScope.user.roles, 'STUDENT')) {
-            $state.go('Startseite_Student')
+            // $state.go('Startseite_Student')
+            $location.path("/student_home");
           } else {
-            $state.go('Startseite_Dozent')
+            // $state.go('Startseite_Dozent')
+            $location.path("/dozent_home");
           }
         }
       }

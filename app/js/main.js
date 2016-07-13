@@ -15,11 +15,13 @@ require('angularjs-slider');
 require('angular-xeditable');
 require('angular-ui-switch');
 require('../../node_modules/angular-toasty/dist/angular-toasty.js');
+require('chart.js');
+require('angular-chart.js');
 
 // angular modules
 import constants from './constants';
-import onConfig  from './on_config';
-import onRun     from './on_run';
+import onConfig from './on_config';
+import onRun from './on_run';
 import 'angular-ui-router';
 import 'angular-resource';
 import 'angular-spring-data-rest';
@@ -49,7 +51,8 @@ const requires = [
   'rzModule',
   'xeditable',
   'uiSwitch',
-  'angular-toasty'
+  'angular-toasty',
+  'chart.js',
 ];
 
 // mount on window for testing

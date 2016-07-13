@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Prüfungen</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <a ng-repeat="pruefung in home.pruefungen" ui-sref="Startseite_Dozent.Pruefungsverwaltung({pruefung: pruefung.bezeichnung})">{{ pruefung.bezeichnung }}</a>
+  </div>
+</div>

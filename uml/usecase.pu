@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+skinparam packageStyle rect
+actor Student
+actor Dozent
+rectangle Prüfungsverwaltung {
+  Student -- (Prüfung anmelden)
+  Student -- (Notenspiegel einsehen)
+  Student -- (Persönliche Daten einsehen)
+  (Noten einpflegen) -- Dozent 
+
+}
+@enduml

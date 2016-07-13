@@ -6,13 +6,13 @@
 </div>
 <div class="row top-buffer-sm">
   <div class="col-sm-12">
-    <table class="table table-condensed">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th>Prüfungsnummer</th>
           <th>Bezeichnung</th>
           <th>Prüfer</th>
-          <!-- <th>Status</th> -->
+          <th>Status</th>
           <th class="text-center">Aktion</th>
         </tr>
       </thead>
@@ -21,8 +21,12 @@
           <td>{{ pruefung.id }}</td>
           <td>{{ pruefung.bezeichnung }}</td>
           <td>{{ pruefung.pruefer }}</td>
-          <!-- <td>{{ pruefung.status }}</td> -->
-          <td class="text-center"><button class="btn btn-sm btn-link" ng-Click="prAnCtrl.anmelden(pruefung.id)">Anmelden</button></td>
+          <td ng-show="pruefung.status() == 'offen'">{{ pruefung.status() }}</td>
+          <td ng-show="pruefung.status() == 'angemeldet'"><span class="label label-info">{{ pruefung.status() }}</span></td>
+          <td ng-show="pruefung.status() == 'nicht bestanden'"><span class="label label-danger">{{ pruefung.status() }}</span></td>
+          <td ng-show="pruefung.status() == 'bestanden'"><span class="label label-success">{{ pruefung.status() }}</span></td>
+          <td ng-hide="pruefung.status() == 'bestanden' || pruefung.status() == 'angemeldet'" class="text-center"><button class="btn btn-sm btn-default" ng-Click="prAnCtrl.anmelden(pruefung)">Anmelden</button></td>
+          <td ng-hide="pruefung.status() != 'bestanden' && pruefung.status() != 'angemeldet'" class="text-center"></td>
         </tr>
       </tbody>
     </table>

@@ -1,4 +1,4 @@
-function LoginCtrl($http, TokenStorage, $rootScope, $location, AppSettings, SecurityService, $scope) {
+function LoginCtrl($http, TokenStorage, $rootScope, $location, AppSettings, SecurityService, $scope, $state) {
   'ngInject';
 
   // ViewModel

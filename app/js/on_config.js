@@ -8,8 +8,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       url: '/student_home',
       views: {
         'content': {
-          controller: 'ExampleCtrl as home',
-          templateUrl: 'home.html'
+          controller: 'Home_Stud as home',
+          templateUrl: 'home_stud.html'
         },
         'navigation': {
           controller: 'NavigationCtrl as navigation',
@@ -26,8 +26,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       url: '/dozent_home',
       views: {
         'content': {
-          controller: 'ExampleCtrl as home',
-          templateUrl: 'home.html'
+          controller: 'Home_Doz as home',
+          templateUrl: 'home_doz.html'
         },
         'navigation': {
           controller: 'NavigationCtrl as navigation',
@@ -44,8 +44,8 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       url: '/',
       views: {
         'content': {
-          controller: 'ExampleCtrl as home',
-          templateUrl: 'home.html'
+          controller: 'Home_Doz as home',
+          templateUrl: 'home_doz.html'
         },
         'navigation': {
           controller: 'NavigationCtrl as navigation',
@@ -108,6 +108,24 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, $httpPr
       },
       ncyBreadcrumb: {
         label: 'Prüfungsverwaltung'
+      },
+      title: 'Prüfungsverwaltung'
+
+
+    }).state('Startseite_Dozent.Pruefungsverwaltung', {
+      url: '/:pruefung',
+      views: {
+        'content@': {
+          controller: 'PrVerCtrlDoz as prVerCtrl',
+          templateUrl: 'prVerDoz.html'
+        },
+        'navigation@': {
+          controller: 'NavigationCtrl as navigation',
+          templateUrl: 'navigation.html'
+        }
+      },
+      ncyBreadcrumb: {
+        label: '{{ prVerCtrl.pruefung }}'
       },
       title: 'Prüfungsverwaltung'
 

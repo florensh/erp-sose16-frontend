@@ -1,4 +1,5 @@
-function NotenspiegelCtrl() {
+function NotenspiegelCtrl(Pruefungen) {
+  'ngInject';
 
   // ViewModel
   const vm = this;
@@ -15,40 +16,16 @@ function NotenspiegelCtrl() {
     fach: 'Software Engineering'
   }
 
-  vm.pruefungen = [{
-    id: 261756,
-    bezeichnung: 'Lineare Algebra und Computergrafik ',
-    pruefer: 'Laun',
-    status: 'bestanden',
-    note: 1.3,
-    semester: 7
-  }, {
-    id: 261823,
-    bezeichnung: 'ERP-Systeme',
-    pruefer: 'Hötzel',
-    status: 'bestanden',
-    note: 2.7,
-    semester: 7
-  }, {
-    id: 261825,
-    bezeichnung: 'Analyse und Optimierung von Geschäftsprozessen',
-    pruefer: 'Mathes',
-    status: 'bestanden',
-    note: 3.0,
-    semester: 7
-  }, {
-    id: 261842,
-    bezeichnung: 'Embedded Systems',
-    pruefer: 'Doneit',
-    status: 'bestanden',
-    note: 1.0,
-    semester: 7
-  }]
+  Pruefungen.getDone().then(p => {
+    vm.pruefungen = p;
+    let s = (_.chain(vm.pruefungen)
+      .map(n => parseFloat(n.note))
+      .sum()) / vm.pruefungen.length
 
-  vm.notenschnitt = _(vm.pruefungen)
-    .map(n => n.note)
-    .sum() / vm.pruefungen.length
+      console.log(s)
 
+    vm.notenschnitt = s
+  })
 }
 
 export default {

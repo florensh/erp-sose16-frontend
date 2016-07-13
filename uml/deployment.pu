@@ -1,0 +1,11 @@
+@startuml
+
+node node1 as "Web Frontend"
+node node2 as "API Backend"
+node node3 as "SAP"
+
+node1 -- node2
+node2 -- node3
+
+
+@enduml
